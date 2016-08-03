@@ -15,10 +15,10 @@ public class UnitTest {
 		Calendar milkWarrant = Calendar.getInstance();
 		milkWarrant.set(2010, 10, 10);
 		Milk milk = new Milk("Mizo", 1, 0.3, 230, milkWarrant);
-		boolean excepted = true;
+		boolean excepted = false;
 
 		// Act
-		boolean result = milk.isMilkTainted();
+		boolean result = milk.isMilkFine();
 		// Assert
 		assertEquals(excepted, result);
 	}
@@ -30,10 +30,10 @@ public class UnitTest {
 		Calendar milkWarrant = Calendar.getInstance();
 		milkWarrant.set(2020, 10, 10);
 		Milk milk = new Milk("Mizo", 1, 0.3, 230, milkWarrant);
-		boolean excepted = false;
+		boolean excepted = true;
 
 		// Act
-		boolean result = milk.isMilkTainted();
+		boolean result = milk.isMilkFine();
 		// Assert
 		assertEquals(excepted, result);
 	}

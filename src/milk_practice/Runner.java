@@ -11,6 +11,6 @@ public class Runner {
 		Milk milk = new Milk("Mizo", 1, 0.3, 230, milkWarrant);
 
 		System.out.println(milk);
-		System.out.println(milk.isMilkTainted());
+		System.out.println(milk.isMilkFine());
 	}
 }
