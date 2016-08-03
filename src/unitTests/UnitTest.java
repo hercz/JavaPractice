@@ -1,4 +1,4 @@
-package milk_practice;
+package unitTests;
 
 import static org.junit.Assert.assertEquals;
 
@@ -6,13 +6,15 @@ import java.time.LocalDate;
 
 import org.junit.Test;
 
+import milk.Milk;
+
 public class UnitTest {
 
 	@Test
 	public void testIsMilkFineForToday() {
 
 		// Arrange
-		Milk milk = new Milk("Mizo", 1, 0.3, 230, LocalDate.now());
+		Milk milk = new Milk(12345L, "Mizo", 1, 0.3, 230, LocalDate.now());
 		boolean excepted = true;
 
 		// Act
@@ -25,7 +27,7 @@ public class UnitTest {
 	public void testIsMilkFineForOldWarrant() {
 
 		// Arrange
-		Milk milk = new Milk("Mizo", 1, 0.3, 230, LocalDate.of(2010, 8, 3));
+		Milk milk = new Milk(12345L, "Mizo", 1, 0.3, 230, LocalDate.of(2010, 8, 3));
 		boolean excepted = false;
 
 		// Act
@@ -38,7 +40,7 @@ public class UnitTest {
 	public void testIsMilkFineForFutureWarrant() {
 
 		// Arrange
-		Milk milk = new Milk("Mizo", 1, 0.3, 230, LocalDate.of(2017, 8, 3));
+		Milk milk = new Milk(12345L, "Mizo", 1, 0.3, 230, LocalDate.of(2017, 8, 3));
 		boolean excepted = true;
 
 		// Act
