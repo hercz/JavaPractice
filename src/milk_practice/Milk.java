@@ -1,15 +1,15 @@
 package milk_practice;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 public class Milk {
 	private String company;
 	private int capacity;
 	private double drippig;
 	private long price;
-	private Calendar warrant;
+	private LocalDate warrant;
 
-	public Milk(String company, int capacity, double drippig, long price, Calendar warrant) {
+	public Milk(String company, int capacity, double drippig, long price, LocalDate warrant) {
 		this.company = company;
 		this.capacity = capacity;
 		this.drippig = drippig;
@@ -33,19 +33,19 @@ public class Milk {
 		return price;
 	}
 
-	public Calendar getWarrant() {
+	public LocalDate getWarrant() {
 		return warrant;
 	}
 
 	public boolean isMilkFine() {
-		Calendar today = Calendar.getInstance();
-		return warrant.after(today);
+		LocalDate yesterday = LocalDate.now().minusDays(1);
+		return warrant.isAfter(yesterday);
 	}
 
 	@Override
 	public String toString() {
 		return "Milk [company=" + company + ", capacity=" + capacity + ", drippig=" + drippig + ", price=" + price
-				+ ", warrant=" + warrant.getTime() + "]";
+				+ ", warrant=" + warrant + "]";
 	}
 
 }
