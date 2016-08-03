@@ -24,6 +24,10 @@ public class Shop {
 		this.milkBar = milkBar;
 	}
 
+	public Hashtable<Long, Milk> getMilkBar() {
+		return milkBar;
+	}
+
 	public String getShopName() {
 		return shopName;
 	}
