@@ -18,6 +18,8 @@ public class Runner {
 
 		Shop shop = new Shop("misiShop", "kukutyim utca 20.", "Misi aHegyrol", new Hashtable<Long, Milk>());
 
+		System.out.println(shop.isThereMilk());
+
 		shop.buyMilk(milkParmalat);
 		shop.buyMilk(milkMizo);
 		shop.buyMilk(milkHerczku);
@@ -27,5 +29,6 @@ public class Runner {
 		shop.sellMilk(milkMizo);
 
 		System.out.println(shop);
+		System.out.println(shop.isThereMilk());
 	}
 }

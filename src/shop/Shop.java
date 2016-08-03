@@ -41,7 +41,7 @@ public class Shop {
 	}
 
 	public boolean isThereMilk() {
-		return true;
+		return !milkBar.isEmpty();
 	}
 
 	public Milk sellMilk(Milk m) {
