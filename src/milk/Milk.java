@@ -2,29 +2,23 @@ package milk;
 
 import java.time.LocalDate;
 
-public class Milk {
-	private long barCode;
-	private String company;
+import food.Food;
+
+public abstract class Milk extends Food {
+
+	public static final int LITER = 1000;
+	public static final int FELLITER = 500;
+	public static final int POHAR = 200;
+	public static final double ZSIROS = 2.8;
+	public static final double FELZSIROS = 1.5;
+
 	private int capacity;
 	private double drippig;
-	private long price;
-	private LocalDate warrant;
 
-	public Milk(long barCode, String company, int capacity, double drippig, long price, LocalDate warrant) {
-		this.company = company;
+	public Milk(Long barCode, String company, LocalDate warrant, int capacity, double drippig) {
+		super(barCode, company, warrant);
 		this.capacity = capacity;
 		this.drippig = drippig;
-		this.price = price;
-		this.warrant = warrant;
-		this.barCode = barCode;
-	}
-
-	public long getBarCode() {
-		return barCode;
-	}
-
-	public String getCompany() {
-		return company;
 	}
 
 	public double getCapacity() {
@@ -35,22 +29,9 @@ public class Milk {
 		return drippig;
 	}
 
-	public double getPrice() {
-		return price;
-	}
-
-	public LocalDate getWarrant() {
-		return warrant;
-	}
-
-	public boolean isMilkFine() {
-		LocalDate yesterday = LocalDate.now().minusDays(1);
-		return warrant.isAfter(yesterday);
-	}
-
 	@Override
 	public String toString() {
 		return "Milk [barCode=" + barCode + ", company=" + company + ", capacity=" + capacity + ", drippig=" + drippig
-				+ ", price=" + price + ", warrant=" + warrant + "]";
+				+ ", warrant=" + warrant + "]";
 	}
 }

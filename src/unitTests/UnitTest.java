@@ -6,6 +6,7 @@ import java.time.LocalDate;
 
 import org.junit.Test;
 
+import milk.LongLifeMilk;
 import milk.Milk;
 
 public class UnitTest {
@@ -14,7 +15,7 @@ public class UnitTest {
 	public void testIsMilkFineForToday() {
 
 		// Arrange
-		Milk milk = new Milk(12345L, "Mizo", 1, 0.3, 230, LocalDate.now());
+		Milk milk = new LongLifeMilk(12345L, "Mizo", LocalDate.now(), 1, 0.3);
 		boolean excepted = true;
 
 		// Act
@@ -27,7 +28,7 @@ public class UnitTest {
 	public void testIsMilkFineForOldWarrant() {
 
 		// Arrange
-		Milk milk = new Milk(12345L, "Mizo", 1, 0.3, 230, LocalDate.of(2010, 8, 3));
+		Milk milk = new LongLifeMilk(12345L, "Mizo", LocalDate.of(2010, 8, 3), 1, 0.3);
 		boolean excepted = false;
 
 		// Act
@@ -40,7 +41,7 @@ public class UnitTest {
 	public void testIsMilkFineForFutureWarrant() {
 
 		// Arrange
-		Milk milk = new Milk(12345L, "Mizo", 1, 0.3, 230, LocalDate.of(2017, 8, 3));
+		Milk milk = new LongLifeMilk(12345L, "Mizo", LocalDate.of(2017, 8, 3), 1, 0.3);
 		boolean excepted = true;
 
 		// Act

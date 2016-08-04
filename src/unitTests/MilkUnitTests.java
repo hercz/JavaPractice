@@ -9,6 +9,7 @@ import java.util.Hashtable;
 
 import org.junit.Test;
 
+import milk.LongLifeMilk;
 import milk.Milk;
 import shop.Shop;
 
@@ -17,7 +18,7 @@ public class MilkUnitTests {
 	@Test
 	public void testIsThereMilkWhenThereIs() {
 		// Arrange
-		Milk milkMizo = new Milk(12345L, "Mizo", 1, 0.3, 230, LocalDate.of(2016, 8, 3));
+		Milk milkMizo = new LongLifeMilk(12345L, "Mizo", LocalDate.of(2016, 8, 3), 1, 0.3);
 		Shop shop = new Shop("misiShop", "kukutyim utca 20.", "Misi aHegyrol", new Hashtable<Long, Milk>());
 		shop.buyMilk(milkMizo);
 		// Act
@@ -39,8 +40,8 @@ public class MilkUnitTests {
 	@Test
 	public void testBuyMilkToBuyTwoMilk() {
 		// Arrange
-		Milk milkMizo = new Milk(12345L, "Mizo", 1, 0.3, 230, LocalDate.of(2016, 8, 3));
-		Milk milkParmalat = new Milk(123L, "Parmalat", 1, 0.3, 230, LocalDate.of(2016, 8, 3));
+		Milk milkMizo = new LongLifeMilk(12345L, "Mizo", LocalDate.of(2016, 8, 3), 1, 0.3);
+		Milk milkParmalat = new LongLifeMilk(123L, "Parmalat", LocalDate.of(2016, 8, 3), 1, 0.3);
 		Shop shop = new Shop("misiShop", "kukutyim utca 20.", "Misi aHegyrol", new Hashtable<Long, Milk>());
 
 		Hashtable<Long, Milk> expectedResult = new Hashtable<Long, Milk>();
@@ -57,8 +58,8 @@ public class MilkUnitTests {
 	@Test
 	public void testSellMilkToSellOneMilk() {
 		// Arrange
-		Milk milkMizo = new Milk(12345L, "Mizo", 1, 0.3, 230, LocalDate.of(2016, 8, 3));
-		Milk milkParmalat = new Milk(123L, "Parmalat", 1, 0.3, 230, LocalDate.of(2016, 8, 3));
+		Milk milkMizo = new LongLifeMilk(12345L, "Mizo", LocalDate.of(2016, 8, 3), 1, 0.3);
+		Milk milkParmalat = new LongLifeMilk(123L, "Parmalat", LocalDate.of(2016, 8, 3), 1, 0.3);
 		Shop shop = new Shop("misiShop", "kukutyim utca 20.", "Misi aHegyrol", new Hashtable<Long, Milk>());
 		shop.buyMilk(milkParmalat);
 		shop.buyMilk(milkMizo);

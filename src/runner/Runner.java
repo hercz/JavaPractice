@@ -3,15 +3,16 @@ package runner;
 import java.time.LocalDate;
 import java.util.Hashtable;
 
+import milk.LongLifeMilk;
 import milk.Milk;
 import shop.Shop;
 
 public class Runner {
 
 	public static void main(String[] args) {
-		Milk milkMizo = new Milk(12345L, "Mizo", 1, 0.3, 230, LocalDate.of(2016, 8, 3));
-		Milk milkParmalat = new Milk(123L, "Parmalat", 1, 0.3, 230, LocalDate.of(2016, 8, 3));
-		Milk milkHerczku = new Milk(345L, "Herczku", 1, 0.3, 230, LocalDate.of(2016, 8, 3));
+		Milk milkMizo = new LongLifeMilk(12345L, "Mizo", LocalDate.of(2016, 8, 3), 1, 0.3);
+		Milk milkParmalat = new LongLifeMilk(123L, "Parmalat", LocalDate.of(2016, 8, 3), 1, 0.3);
+		Milk milkHerczku = new LongLifeMilk(345L, "Herczku", LocalDate.of(2016, 8, 3), 1, 0.3);
 
 		System.out.println(milkMizo);
 		System.out.println(milkMizo.isMilkFine());
